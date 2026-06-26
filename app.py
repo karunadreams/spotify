@@ -23,6 +23,10 @@ st.markdown("""
         visibility: hidden !important;
         display: none !important;
     }
+    /* Hide sidebar collapse/expand buttons */
+    .ef3psqc5, .ef3psqc4, [data-testid="collapsedControl"] {
+        display: none !important;
+    }
     /* Global Background & Text */
     .stApp {
         background-color: #121212;
