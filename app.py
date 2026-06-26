@@ -14,6 +14,15 @@ st.set_page_config(
 # 2. Spotify Styling Injection
 st.markdown("""
 <style>
+    /* Hide Streamlit Header and Footer */
+    header, [data-testid="stHeader"] {
+        visibility: hidden !important;
+        display: none !important;
+    }
+    footer, [data-testid="stFooter"] {
+        visibility: hidden !important;
+        display: none !important;
+    }
     /* Global Background & Text */
     .stApp {
         background-color: #121212;
