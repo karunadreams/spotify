@@ -38,11 +38,18 @@ st.markdown("""
     section[data-testid="stSidebar"] {
         background-color: #191414 !important;
         border-right: 1px solid #282828;
+        transform: none !important;
+        margin-left: 0px !important;
+        width: 21rem !important;
+        display: block !important;
     }
     section[data-testid="stSidebar"],
     section[data-testid="stSidebar"] * {
         overflow-y: hidden !important;
         overflow-x: hidden !important;
+    }
+    .main {
+        margin-left: 21rem !important;
     }
     [data-testid="stSidebarUserContent"] {
         padding-top: 1.5rem !important;
