@@ -50,6 +50,13 @@ st.markdown("""
     section[data-testid="stSidebar"] p {
         color: #FFFFFF !important;
     }
+    section[data-testid="stSidebar"] h2 {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    section[data-testid="stSidebar"] [data-testid="stImage"] {
+        margin-bottom: 0px !important;
+    }
     /* Headers styling */
     h1, h2, h3 {
         color: #1DB954 !important;
