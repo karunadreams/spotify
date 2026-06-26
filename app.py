@@ -28,6 +28,9 @@ st.markdown("""
         background-color: #121212;
         color: #FFFFFF;
     }
+    .block-container, [data-testid="stAppViewBlockContainer"] {
+        padding-bottom: 2rem !important;
+    }
     section[data-testid="stSidebar"] {
         background-color: #191414 !important;
         border-right: 1px solid #282828;
@@ -249,7 +252,6 @@ else:
 
 
 # 12. Strategic Footer
-st.markdown("---")
 st.markdown(
     "<div style='text-align: center; color: #888; padding: 10px;'>"
     "Spotify Review Discovery Engine &copy; 2026. Made with 💚 using Streamlit."
