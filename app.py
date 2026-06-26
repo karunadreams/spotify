@@ -37,6 +37,9 @@ st.markdown("""
         overflow-y: hidden !important;
         overflow-x: hidden !important;
     }
+    [data-testid="stSidebarUserContent"] {
+        padding-top: 1.5rem !important;
+    }
     section[data-testid="stSidebar"] h1, 
     section[data-testid="stSidebar"] h2, 
     section[data-testid="stSidebar"] h3,
