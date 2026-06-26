@@ -148,29 +148,25 @@ else:
     st.markdown("---")
 
     # Layout for PM Synthesis
-    col1, col2, col3 = st.columns(3)
+    col_summary, col_details = st.columns([1, 2])
 
-    with col1:
+    with col_summary:
         st.markdown(f"""
-        <div class="pm-card">
-            <div class="pm-card-title">💡 PM-Style Answer</div>
-            <div class="pm-card-content">{q_data['answer']}</div>
+        <div class="pm-card" style="border-left-color: #1DB954; height: 100%;">
+            <div class="pm-card-title" style="color: #1DB954;">📌 Key Takeaway</div>
+            <div class="pm-card-content" style="font-weight: 500; font-size: 1.15rem; line-height: 1.6;">{q_data['conclusion']}</div>
         </div>
         """, unsafe_allow_html=True)
 
-    with col2:
+    with col_details:
         st.markdown(f"""
-        <div class="pm-card" style="border-left-color: #F89B29;">
-            <div class="pm-card-title" style="color: #F89B29;">🔍 Why It Is Happening</div>
-            <div class="pm-card-content">{q_data['why_it_is_happening']}</div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with col3:
-        st.markdown(f"""
-        <div class="pm-card" style="border-left-color: #2D96FF;">
-            <div class="pm-card-title" style="color: #2D96FF;">🚀 Product Implication</div>
-            <div class="pm-card-content">{q_data['product_implication']}</div>
+        <div class="pm-card" style="border-left-color: #2D96FF; height: 100%;">
+            <div class="pm-card-title" style="color: #2D96FF;">📖 Detailed PM Explanation</div>
+            <div class="pm-card-content" style="font-size: 0.98rem; line-height: 1.6;">
+                <p style="margin-bottom: 0.8rem;"><strong>PM-Style Answer:</strong> {q_data['answer']}</p>
+                <p style="margin-bottom: 0.8rem;"><strong>Why It Is Happening:</strong> {q_data['why_it_is_happening']}</p>
+                <p style="margin-bottom: 0px;"><strong>Product Implication:</strong> {q_data['product_implication']}</p>
+            </div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -247,10 +243,7 @@ else:
                 st.write(rev['raw_text'])
                 st.markdown(f"**Source URL:** [Link]({rev['source_url']})")
 
-    # 11. Overall Conclusion Footer
-    st.markdown("---")
-    st.markdown("### Conclusion")
-    st.info(q_data['conclusion'])
+
 
 # 12. Strategic Footer
 st.markdown("---")
