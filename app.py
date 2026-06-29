@@ -23,10 +23,6 @@ st.markdown("""
         visibility: hidden !important;
         display: none !important;
     }
-    /* Hide sidebar collapse/expand buttons */
-    .ef3psqc5, .ef3psqc4, [data-testid="collapsedControl"] {
-        display: none !important;
-    }
     /* Global Background & Text */
     .stApp {
         background-color: #121212;
@@ -45,6 +41,20 @@ st.markdown("""
         overflow: hidden !important;
     }
 
+    /* Force the inner scroll container to remain visible and fully sized on all screen widths */
+    section[data-testid="stSidebar"] > div {
+        transform: none !important;
+        margin-left: 0px !important;
+        width: 100% !important;
+        display: block !important;
+    }
+
+    /* Hide sidebar collapse/expand buttons on all screen widths */
+    .ef3psqc5, .ef3psqc4, [data-testid="collapsedControl"] {
+        display: none !important;
+    }
+
+    /* Position main content next to the permanent sidebar */
     .main {
         margin-left: 21rem !important;
     }
