@@ -42,16 +42,38 @@ st.markdown("""
         margin-left: 0px !important;
         width: 21rem !important;
         display: block !important;
+        overflow: hidden !important;
     }
-    section[data-testid="stSidebar"],
-    section[data-testid="stSidebar"] * {
-        overflow-x: hidden !important;
-    }
+
     .main {
         margin-left: 21rem !important;
     }
+    section[data-testid="stSidebar"] > div,
+    [data-testid="stSidebarUserContent"] {
+        overflow-y: scroll !important;
+        scrollbar-width: auto !important;
+        scrollbar-color: #1DB954 #282828 !important;
+    }
     [data-testid="stSidebarUserContent"] {
         padding-top: 1.5rem !important;
+    }
+    section[data-testid="stSidebar"] > div::-webkit-scrollbar,
+    [data-testid="stSidebarUserContent"]::-webkit-scrollbar {
+        width: 10px !important;
+        display: block !important;
+    }
+    section[data-testid="stSidebar"] > div::-webkit-scrollbar-track,
+    [data-testid="stSidebarUserContent"]::-webkit-scrollbar-track {
+        background: #282828 !important;
+    }
+    section[data-testid="stSidebar"] > div::-webkit-scrollbar-thumb,
+    [data-testid="stSidebarUserContent"]::-webkit-scrollbar-thumb {
+        background: #1DB954 !important;
+        border-radius: 5px !important;
+    }
+    section[data-testid="stSidebar"] > div::-webkit-scrollbar-thumb:hover,
+    [data-testid="stSidebarUserContent"]::-webkit-scrollbar-thumb:hover {
+        background: #1ed760 !important;
     }
     section[data-testid="stSidebar"] h1, 
     section[data-testid="stSidebar"] h2, 
