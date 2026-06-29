@@ -45,7 +45,6 @@ st.markdown("""
     }
     section[data-testid="stSidebar"],
     section[data-testid="stSidebar"] * {
-        overflow-y: hidden !important;
         overflow-x: hidden !important;
     }
     .main {
