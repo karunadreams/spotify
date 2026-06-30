@@ -67,13 +67,21 @@ st.markdown("""
         margin-left: 21rem !important;
     }
     section[data-testid="stSidebar"] > div,
-    [data-testid="stSidebarUserContent"] {
+    [data-testid="stSidebarUserContent"],
+    [data-testid="stSidebarContent"] {
         overflow-y: hidden !important;
         scrollbar-width: none !important;
     }
-    [data-testid="stSidebarUserContent"] {
-        padding-top: 0.5rem !important;
+    [data-testid="stSidebarUserContent"],
+    [data-testid="stSidebarContent"] {
+        padding-top: 0.2rem !important;
     }
+    [data-testid="stSidebarHeader"] {
+        display: none !important;
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+    }
+
     section[data-testid="stSidebar"] > div::-webkit-scrollbar,
     [data-testid="stSidebarUserContent"]::-webkit-scrollbar {
         display: none !important;
