@@ -29,8 +29,10 @@ st.markdown("""
         color: #FFFFFF;
     }
     .block-container, [data-testid="stAppViewBlockContainer"] {
+        padding-top: 1.5rem !important;
         padding-bottom: 2rem !important;
     }
+
     section[data-testid="stSidebar"] {
         background-color: #191414 !important;
         border-right: 1px solid #282828;
