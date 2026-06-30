@@ -198,28 +198,25 @@ else:
     st.markdown(f"## {q_data['question_id']}: {q_data['question']}")
     st.markdown("---")
 
-    # Layout for PM Synthesis
-    col_summary, col_details = st.columns([1, 2])
+    # Layout for PM Synthesis (stacked full-width/landscape)
+    st.markdown(f"""
+    <div class="pm-card" style="border-left-color: #1DB954;">
+        <div class="pm-card-title" style="color: #1DB954;">📌 Conclusion</div>
+        <div class="pm-card-content" style="font-weight: 500; font-size: 1.15rem; line-height: 1.6;">{q_data['conclusion']}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
-    with col_summary:
-        st.markdown(f"""
-        <div class="pm-card" style="border-left-color: #1DB954; height: 100%;">
-            <div class="pm-card-title" style="color: #1DB954;">📌 Key Takeaway</div>
-            <div class="pm-card-content" style="font-weight: 500; font-size: 1.15rem; line-height: 1.6;">{q_data['conclusion']}</div>
+    st.markdown(f"""
+    <div class="pm-card" style="border-left-color: #2D96FF;">
+        <div class="pm-card-title" style="color: #2D96FF;">📖 Detailed Explanation</div>
+        <div class="pm-card-content" style="font-size: 0.98rem; line-height: 1.6;">
+            <p style="margin-bottom: 0.8rem;"><strong>Answer:</strong> {q_data['answer']}</p>
+            <p style="margin-bottom: 0.8rem;"><strong>Why It Is Happening:</strong> {q_data['why_it_is_happening']}</p>
+            <p style="margin-bottom: 0px;"><strong>Product Implication:</strong> {q_data['product_implication']}</p>
         </div>
-        """, unsafe_allow_html=True)
+    </div>
+    """, unsafe_allow_html=True)
 
-    with col_details:
-        st.markdown(f"""
-        <div class="pm-card" style="border-left-color: #2D96FF; height: 100%;">
-            <div class="pm-card-title" style="color: #2D96FF;">📖 Detailed PM Explanation</div>
-            <div class="pm-card-content" style="font-size: 0.98rem; line-height: 1.6;">
-                <p style="margin-bottom: 0.8rem;"><strong>PM-Style Answer:</strong> {q_data['answer']}</p>
-                <p style="margin-bottom: 0.8rem;"><strong>Why It Is Happening:</strong> {q_data['why_it_is_happening']}</p>
-                <p style="margin-bottom: 0px;"><strong>Product Implication:</strong> {q_data['product_implication']}</p>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
 
     # 8. Platform Breakdown & Charts
     st.markdown("### Platform Evidence Breakdown")
