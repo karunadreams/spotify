@@ -66,18 +66,32 @@ st.markdown("""
     }
     section[data-testid="stSidebar"] > div,
     [data-testid="stSidebarUserContent"] {
-        overflow-y: hidden !important;
-        scrollbar-width: none !important;
+        overflow-y: auto !important;
+        scrollbar-width: auto !important;
+        scrollbar-color: #1DB954 #282828 !important;
     }
     [data-testid="stSidebarUserContent"] {
         padding-top: 0.5rem !important;
     }
     section[data-testid="stSidebar"] > div::-webkit-scrollbar,
     [data-testid="stSidebarUserContent"]::-webkit-scrollbar {
-        display: none !important;
-        width: 0 !important;
-        height: 0 !important;
+        width: 8px !important;
+        display: block !important;
     }
+    section[data-testid="stSidebar"] > div::-webkit-scrollbar-track,
+    [data-testid="stSidebarUserContent"]::-webkit-scrollbar-track {
+        background: #282828 !important;
+    }
+    section[data-testid="stSidebar"] > div::-webkit-scrollbar-thumb,
+    [data-testid="stSidebarUserContent"]::-webkit-scrollbar-thumb {
+        background: #1DB954 !important;
+        border-radius: 4px !important;
+    }
+    section[data-testid="stSidebar"] > div::-webkit-scrollbar-thumb:hover,
+    [data-testid="stSidebarUserContent"]::-webkit-scrollbar-thumb:hover {
+        background: #1ed760 !important;
+    }
+
     section[data-testid="stSidebar"] h1, 
     section[data-testid="stSidebar"] h2, 
     section[data-testid="stSidebar"] h3,
