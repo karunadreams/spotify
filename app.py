@@ -56,7 +56,7 @@ st.markdown("""
     }
 
     /* Hide sidebar collapse/expand buttons on all screen widths */
-    .ef3psqc5, .ef3psqc4, [data-testid="collapsedControl"] {
+    .ef3psqc5, .ef3psqc4, [data-testid="collapsedControl"], .e12tamyi15, [aria-label="Close sidebar"], [aria-label="Expand sidebar"] {
         display: none !important;
     }
 
