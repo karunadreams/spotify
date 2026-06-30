@@ -56,7 +56,7 @@ st.markdown("""
     }
 
     /* Hide sidebar collapse/expand buttons on all screen widths */
-    .ef3psqc5, .ef3psqc4, [data-testid="collapsedControl"], .e12tamyi15, [aria-label="Close sidebar"], [aria-label="Expand sidebar"] {
+    .ef3psqc5, .ef3psqc4, [data-testid="collapsedControl"], section[data-testid="stSidebar"] button, [aria-label="Close sidebar"], [aria-label="Expand sidebar"], [aria-label="Open sidebar"] {
         display: none !important;
     }
 
@@ -66,31 +66,19 @@ st.markdown("""
     }
     section[data-testid="stSidebar"] > div,
     [data-testid="stSidebarUserContent"] {
-        overflow-y: auto !important;
-        scrollbar-width: auto !important;
-        scrollbar-color: #1DB954 #282828 !important;
+        overflow-y: hidden !important;
+        scrollbar-width: none !important;
     }
     [data-testid="stSidebarUserContent"] {
         padding-top: 0.5rem !important;
     }
     section[data-testid="stSidebar"] > div::-webkit-scrollbar,
     [data-testid="stSidebarUserContent"]::-webkit-scrollbar {
-        width: 8px !important;
-        display: block !important;
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
     }
-    section[data-testid="stSidebar"] > div::-webkit-scrollbar-track,
-    [data-testid="stSidebarUserContent"]::-webkit-scrollbar-track {
-        background: #282828 !important;
-    }
-    section[data-testid="stSidebar"] > div::-webkit-scrollbar-thumb,
-    [data-testid="stSidebarUserContent"]::-webkit-scrollbar-thumb {
-        background: #1DB954 !important;
-        border-radius: 4px !important;
-    }
-    section[data-testid="stSidebar"] > div::-webkit-scrollbar-thumb:hover,
-    [data-testid="stSidebarUserContent"]::-webkit-scrollbar-thumb:hover {
-        background: #1ed760 !important;
-    }
+
 
     section[data-testid="stSidebar"] h1, 
     section[data-testid="stSidebar"] h2, 
@@ -168,13 +156,8 @@ st.markdown('<h1 class="main-title">🎵 Spotify Review Discovery Engine</h1>', 
 st.markdown('<div class="sub-title">Product Management Fellowship Research Dashboard</div>', unsafe_allow_html=True)
 
 # 5. Sidebar Setup
-st.sidebar.markdown(
-    '<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">'
-    '<img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="28">'
-    '<span style="font-size: 1.15rem; font-weight: bold; color: #FFFFFF; letter-spacing: -0.5px;">Navigation</span>'
-    '</div>',
-    unsafe_allow_html=True
-)
+st.sidebar.image("https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg", width=80)
+st.sidebar.markdown("## Navigation")
 
 question_options = {
     1: "Q1: Why do users struggle to discover new music?",
@@ -185,6 +168,7 @@ question_options = {
     6: "Q6: Consistent unmet needs"
 }
 
+st.sidebar.markdown("Select PM Research Question")
 selected_q_idx = st.sidebar.selectbox(
     "Select PM Research Question",
     options=list(question_options.keys()),
@@ -192,15 +176,19 @@ selected_q_idx = st.sidebar.selectbox(
     label_visibility="collapsed"
 )
 
+st.sidebar.markdown("---")
+st.sidebar.markdown("## Database Statistics")
+st.sidebar.metric(label="Total Raw Reviews Ingested", value="5,000")
+
 st.sidebar.markdown("""
-<div style="background-color: #181818; padding: 10px; border-radius: 4px; font-size: 0.8rem; margin-top: 10px; border: 1px solid #282828; border-left: 3px solid #1DB954;">
-    <div style="font-weight: bold; color: #1DB954; font-size: 0.72rem; letter-spacing: 0.5px; margin-bottom: 2px;">DATABASE STATISTICS</div>
-    <div style="font-size: 1.1rem; font-weight: bold; color: #FFFFFF; margin-bottom: 4px;">5,000 Reviews</div>
-    <div style="color: #B3B3B3; font-size: 0.75rem; line-height: 1.25;">
-        <strong>Sources:</strong> App Store, Play Store, Reddit, Spotify Community, Twitter
-    </div>
-</div>
-""", unsafe_allow_html=True)
+**Source Platforms:**
+- App Store reviews
+- Play Store reviews
+- Reddit discussions
+- Spotify Community forums
+- Social media conversations
+""")
+
 
 # 6. Load data for the selected question
 q_data = load_question_data(selected_q_idx)
